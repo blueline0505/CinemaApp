@@ -5,7 +5,7 @@
 //  Created by DAVIDPAN on 2024/2/27.
 //
 
-import Foundation
+import UIKit
 
 struct MovieModel: Codable {
     let page: Int
@@ -26,14 +26,18 @@ struct Movie: Codable {
     let id: Int
     let title: String?
     let originalTitle: String?
+    let originalLanguage: String?
     let overview: String?
     let popularity: Double?
     let posterPath: String?
+    let mediaType: String?
     let releaseDate: String?
     let voteAverage: Double
     let voteCount: Int
     let name: String?
     let originalName, firstAirDate: String?
+    
+    var thumbnailImage: UIImage?
 }
 
 extension Movie {
@@ -42,8 +46,10 @@ extension Movie {
         case id
         case title
         case originalTitle = "original_title"
+        case originalLanguage = "original_language"
         case overview, popularity
         case posterPath = "poster_path"
+        case mediaType = "media_type"
         case releaseDate = "release_date"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
